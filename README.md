@@ -29,13 +29,11 @@ Real-time preview with working validation and logic
 ✅ Export Options
 
 Download form schema (JSON)
-
 Export as embeddable HTML or React component code
 
 ✅ Persistence
 
 Autosave to localStorage
-
 "Reset Form" and "Load Last Form" buttons
 
 🛠️ Tech Stack
@@ -48,40 +46,22 @@ Form Rendering	react-hook-form (optional)
 State Management	React Context + Local State
 Data Persistence	localStorage
 
-📂 Folder Structure
-bash
-Copy
-Edit
-src/
-│
-├── components/         # Form builder UI components
-├── hooks/              # Custom hooks (e.g., useFormSchema)
-├── utils/              # JSON exporter, validators, etc.
-├── context/            # Context for schema state
-├── pages/              # Main SPA view
-└── App.jsx             # App entry point
+
 🚀 Getting Started
 1. Clone the Repo
-bash
-Copy
-Edit
 git clone https://github.com/yourusername/form-builder.git
 cd form-builder
+
 2. Install Dependencies
-bash
-Copy
-Edit
 npm install
+
 3. Run the App
-bash
-Copy
-Edit
 npm run dev
+
+
 📤 Export Format Example
 🔹 JSON Schema Output
-json
-Copy
-Edit
+
 {
   "fields": [
     {
@@ -104,19 +84,16 @@ Edit
     }
   ]
 }
+
+
 🔹 React Output (Snippet)
-jsx
-Copy
-Edit
 <input type="text" required placeholder="Full Name" />
 <input type="number" hidden={formData.name === ''} />
+
+
 💡 Future Enhancements
-Multi-step form support
-
-Multi-language form support
-
-Backend integration (optional)
-
-Drag & drop reorder UI
-
-Form submission analytics
+- Multi-step form support
+- Multi-language form support
+- Backend integration (optional)
+- Drag & drop reorder UI
+- Form submission analytics
