@@ -1,73 +1,122 @@
-# Welcome to your Lovable project
+A React-based Single Page Application (SPA) that allows users to visually create and preview forms with custom fields, validation rules, and conditional logic — all without writing a single line of code.
 
-## Project info
+🔗 Live Demo
+form-builder-xi-amber.vercel.app
 
-**URL**: https://lovable.dev/projects/47d07d00-9cf5-4159-abcf-82c71d2744f5
+✨ Features
+✅ Add/Edit/Delete Fields
 
-## How can I edit this code?
+Text, Number, Email, Date, Dropdown, Checkbox, Radio
 
-There are several ways of editing your application.
+✅ Field Properties
 
-**Use Lovable**
+Label, Placeholder, Default Value, Required
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/47d07d00-9cf5-4159-abcf-82c71d2744f5) and start prompting.
+✅ Validation Rules
 
-Changes made via Lovable will be committed automatically to this repo.
+Min/Max values, pattern matching, length constraints
 
-**Use your preferred IDE**
+✅ Conditional Logic
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Show/hide fields based on other field values
+Example:
+IF Age > 18 THEN Show Occupation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+✅ Live Form Preview
 
-Follow these steps:
+Real-time preview with working validation and logic
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+✅ Export Options
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Download form schema (JSON)
 
-# Step 3: Install the necessary dependencies.
-npm i
+Export as embeddable HTML or React component code
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+✅ Persistence
+
+Autosave to localStorage
+
+"Reset Form" and "Load Last Form" buttons
+
+🛠️ Tech Stack
+Layer	Tools Used
+Framework	React
+Styling	Tailwind CSS
+Code Editor	Plain form builder UI (no backend)
+Drag & Drop	dnd-kit
+Form Rendering	react-hook-form (optional)
+State Management	React Context + Local State
+Data Persistence	localStorage
+
+📂 Folder Structure
+bash
+Copy
+Edit
+src/
+│
+├── components/         # Form builder UI components
+├── hooks/              # Custom hooks (e.g., useFormSchema)
+├── utils/              # JSON exporter, validators, etc.
+├── context/            # Context for schema state
+├── pages/              # Main SPA view
+└── App.jsx             # App entry point
+🚀 Getting Started
+1. Clone the Repo
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/form-builder.git
+cd form-builder
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Run the App
+bash
+Copy
+Edit
 npm run dev
-```
+📤 Export Format Example
+🔹 JSON Schema Output
+json
+Copy
+Edit
+{
+  "fields": [
+    {
+      "id": "name",
+      "type": "text",
+      "label": "Full Name",
+      "required": true
+    },
+    {
+      "id": "age",
+      "type": "number",
+      "label": "Age",
+      "logic": {
+        "showIf": {
+          "field": "name",
+          "operator": "!=",
+          "value": ""
+        }
+      }
+    }
+  ]
+}
+🔹 React Output (Snippet)
+jsx
+Copy
+Edit
+<input type="text" required placeholder="Full Name" />
+<input type="number" hidden={formData.name === ''} />
+💡 Future Enhancements
+Multi-step form support
 
-**Edit a file directly in GitHub**
+Multi-language form support
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Backend integration (optional)
 
-**Use GitHub Codespaces**
+Drag & drop reorder UI
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/47d07d00-9cf5-4159-abcf-82c71d2744f5) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Form submission analytics
